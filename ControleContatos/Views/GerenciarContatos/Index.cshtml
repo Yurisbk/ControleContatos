@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Gerenciador de Contatos";
+}
+
+<div class="text-center">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start"> 
+        <a class="btn btn-primary" role="button" asp-controller="GerenciarContatos" asp-action="CriarContato">Adicionar novo contato</a>
+    </div>
+    <br />
+
+    <h1 class="display-4">Listagem de contatos</h1>
+    <br />
+    <h3>Gerencie seus contatos utilizando a tabela abaixo</h3>
+
+    <table class="table table-striped" class="table table-bordered" class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefone</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>John Snow</td>
+            <td>John.Snow@gmail.com</td>
+            <td>11 94852-0482</td>
+            <td>
+                <div>
+                     <a role="button" class="btn btn-primary" asp-controller="GerenciarContatos" asp-action="EditarContato">Editar</a>
+                     <a role="button" class="btn btn-danger" asp-controller="GerenciarContatos" asp-action="DeletarContatoConfirm">Deletar</a>
+                </div>
+            </td>
+           
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Ripley</td>
+            <td>S2ALIENS@outlook.com</td>
+            <td>11 98643-3876</td>
+            <td>
+                <div>
+                     <a role="button" class="btn btn-primary" asp-controller="GerenciarContatos" asp-action="EditarContato">Editar</a>
+                     <a role="button" class="btn btn-danger" asp-controller="GerenciarContatos" asp-action="DeletarContatoConfirm">Deletar</a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry the Bird</td>
+            <td>flying.high@gmail.com</td>
+            <td>15 96637-2835</td>
+            <td>
+                <div>
+                     <a role="button" class="btn btn-primary" asp-controller="GerenciarContatos" asp-action="EditarContato">Editar</a>
+                     <a role="button" class="btn btn-danger" asp-controller="GerenciarContatos" asp-action="DeletarContatoConfirm">Deletar</a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    
+</div>
+
