@@ -1,5 +1,33 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model ContatoModel
 @{
+    ViewData["Title"] = "Editar Contato";
 }
+
+
+
+<form asp-controller="GerenciarContatos" asp-action="EditarContato" method="post">
+    <div class="text-center">
+    <h1 class="display-4">Editar contatos</h1>
+
+    <div class="col-6">
+        <div class="input-group mb-3">
+          <span class="input-group-text">Nome:</span>
+          <input type="text" asp-for="Name"  class="form-control"  placeholder="Nome Completo..." aria-label="Nome" aria-describedby="basic-addon1">
+        </div>
+    </div>
+        <div class="col-6">
+        <div class="input-group mb-3">
+          <span class="input-group-text">Email:</span>
+          <input type="text" asp-for="Email" class="form-control" placeholder="Email@exemplo.com..." aria-label="Email" aria-describedby="basic-addon1">
+        </div>
+    </div>
+        <div class="col-6">
+        <div class="input-group mb-3">
+          <span class="input-group-text">Telefone:</span>
+          <input type="text" asp-for="Celular" class="form-control" placeholder="11 91234-5678..." aria-label="Telefone" aria-describedby="basic-addon1">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Confirmar edição</button>  
+    <a role="button" class="btn btn-danger" asp-controller="GerenciarContatos" asp-action="Index">Cancelar</a>
+    </div>
+</form>

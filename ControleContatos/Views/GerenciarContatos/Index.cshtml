@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<ContatoModel>
+@{
     ViewData["Title"] = "Gerenciador de Contatos";
 }
 
@@ -24,43 +25,27 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>John Snow</td>
-            <td>John.Snow@gmail.com</td>
-            <td>11 94852-0482</td>
-            <td>
-                <div>
-                     <a role="button" class="btn btn-primary" asp-controller="GerenciarContatos" asp-action="EditarContato">Editar</a>
-                     <a role="button" class="btn btn-danger" asp-controller="GerenciarContatos" asp-action="DeletarContatoConfirm">Deletar</a>
-                </div>
-            </td>
+
+                @if (Model != null && Model.Any())
+                {
+                    foreach (ContatoModel info in Model)
+                    {
+                    <tr>
+                    <th scope="row">@info.Id</th>
+                        <td>@info.Name</td>
+                        <td>@info.Email</td>
+                        <td>@info.Celular</td>
+                        <td>
+                        <div>
+                            <a role="button" class="btn btn-primary" asp-route-id="@info.Id" asp-controller="GerenciarContatos" asp-action="EditarContato">Editar</a>
+                            <a role="button" class="btn btn-danger" asp-route-id="@info.Id" asp-controller="GerenciarContatos" asp-action="DeletarContatoConfirm">Deletar</a>
+                        </div>
+                        </td>
            
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Ripley</td>
-            <td>S2ALIENS@outlook.com</td>
-            <td>11 98643-3876</td>
-            <td>
-                <div>
-                     <a role="button" class="btn btn-primary" asp-controller="GerenciarContatos" asp-action="EditarContato">Editar</a>
-                     <a role="button" class="btn btn-danger" asp-controller="GerenciarContatos" asp-action="DeletarContatoConfirm">Deletar</a>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry the Bird</td>
-            <td>flying.high@gmail.com</td>
-            <td>15 96637-2835</td>
-            <td>
-                <div>
-                     <a role="button" class="btn btn-primary" asp-controller="GerenciarContatos" asp-action="EditarContato">Editar</a>
-                     <a role="button" class="btn btn-danger" asp-controller="GerenciarContatos" asp-action="DeletarContatoConfirm">Deletar</a>
-                </div>
-            </td>
-        </tr>
+                    </tr>
+                    }
+                }
+
         </tbody>
     </table>
     
